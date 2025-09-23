@@ -1,0 +1,201 @@
+<!--pages/test/test.wxml-->
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-content">
+      <view class="loading-icon">📝</view>
+      <view class="loading-text">正在加载题目...</view>
+      <view class="loading-tip">请稍候片刻</view>
+    </view>
+  </view>
+
+  <!-- 测试开始界面 -->
+  <view class="start-container" wx:if="{{!loading && !testStarted}}">
+    <view class="start-header">
+      <view class="start-icon">{{testInfo[testType].icon}}</view>
+      <view class="start-title">{{testInfo[testType].title}}</view>
+      <view class="start-subtitle">{{testInfo[testType].subtitle}}</view>
+    </view>
+
+    <view class="start-content">
+      <view class="test-description">
+        <text class="description-title">测试说明</text>
+        <text class="description-text">• 请根据自己的真实情况回答问题</text>
+        <text class="description-text">• 不要过多思考，选择第一感觉的答案</text>
+        <text class="description-text">• 所有题目没有对错之分</text>
+      </view>
+
+      <view class="start-tips">
+        <view class="tips-item">
+          <text class="tips-icon">⚡</text>
+          <text class="tips-text">测试时间约{{testType === 'simple' ? '5-8' : '15-20'}}分钟</text>
+        </view>
+        <view class="tips-item">
+          <text class="tips-icon">🎯</text>
+          <text class="tips-text">建议在安静环境下完成</text>
+        </view>
+        <view class="tips-item">
+          <text class="tips-icon">⏸</text>
+          <text class="tips-text">答案将自动保存，可随时暂停</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="start-actions">
+      <button class="btn-primary" bindtap="startTest">开始测试</button>
+      <button class="btn-secondary" bindtap="confirmExit">返回首页</button>
+    </view>
+  </view>
+
+  <!-- 测试进行界面 -->
+  <view class="test-container" wx:if="{{!loading && testStarted}}">
+    <!-- 顶部导航栏 -->
+    <view class="test-header">
+      <view class="header-left">
+        <view class="nav-button" bindtap="confirmExit">
+          <text class="nav-icon">←</text>
+          <text class="nav-text">退出</text>
+        </view>
+      </view>
+      <view class="header-center">
+        <view class="timer-text">{{formatTime(timeSpent)}}</view>
+      </view>
+      <view class="header-right">
+        <view class="nav-button" bindtap="pauseTest">
+          <text class="nav-icon">⏸</text>
+          <text class="nav-text">暂停</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 进度条 -->
+    <view class="progress-section">
+      <view class="progress-info">
+        <text class="progress-text">第 {{currentQuestion + 1}} 题 / 共 {{totalQuestions}} 题</text>
+        <text class="progress-percent">{{progress}}%</text>
+      </view>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{progress}}%"></view>
+      </view>
+    </view>
+
+    <!-- 题目显示 -->
+    <view class="question-container" wx:if="{{questions.length > 0}}">
+      <view class="question-header">
+        <view class="question-number">第{{currentQuestion + 1}}题</view>
+        <view class="question-category" wx:if="{{testType === 'simple'}}">
+          {{questions[currentQuestion].dimension_group === 'EI' ? '精力来源' : 
+            questions[currentQuestion].dimension_group === 'SN' ? '信息获取' : 
+            questions[currentQuestion].dimension_group === 'TF' ? '决策方式' : '生活方式'}}
+        </view>
+      </view>
+
+      <view class="question-content">
+        <view class="question-text">{{questions[currentQuestion].question_text}}</view>
+        
+        <view class="options-container">
+          <!-- simple 模式：A/B 固定两项 -->
+          <block wx:if="{{testType === 'simple'}}">
+            <view 
+              class="option-item {{currentAnswer === 'A' ? 'selected' : ''}}"
+              data-option="A"
+              bindtap="selectAnswer"
+            >
+              <view class="option-label">A</view>
+              <view class="option-content">
+                <view class="option-text">{{questions[currentQuestion].option_a.text}}</view>
+                <view class="option-dimension">
+                  {{questions[currentQuestion].option_a.dimension === 'E' ? '外向' : 
+                    questions[currentQuestion].option_a.dimension === 'I' ? '内向' :
+                    questions[currentQuestion].option_a.dimension === 'S' ? '感觉' : 
+                    questions[currentQuestion].option_a.dimension === 'N' ? '直觉' :
+                    questions[currentQuestion].option_a.dimension === 'T' ? '思考' :
+                    questions[currentQuestion].option_a.dimension === 'F' ? '情感' :
+                    questions[currentQuestion].option_a.dimension === 'J' ? '判断' : '感知'}}
+                </view>
+              </view>
+            </view>
+
+            <view 
+              class="option-item {{currentAnswer === 'B' ? 'selected' : ''}}"
+              data-option="B"
+              bindtap="selectAnswer"
+            >
+              <view class="option-label">B</view>
+              <view class="option-content">
+                <view class="option-text">{{questions[currentQuestion].option_b.text}}</view>
+                <view class="option-dimension">
+                  {{questions[currentQuestion].option_b.dimension === 'E' ? '外向' : 
+                    questions[currentQuestion].option_b.dimension === 'I' ? '内向' :
+                    questions[currentQuestion].option_b.dimension === 'S' ? '感觉' : 
+                    questions[currentQuestion].option_b.dimension === 'N' ? '直觉' :
+                    questions[currentQuestion].option_b.dimension === 'T' ? '思考' :
+                    questions[currentQuestion].option_b.dimension === 'F' ? '情感' :
+                    questions[currentQuestion].option_b.dimension === 'J' ? '判断' : '感知'}}
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- detailed 模式：基于 options 数组渲染 -->
+          <block wx:elif="{{testType === 'detailed'}}">
+            <block wx:for="{{questions[currentQuestion].options}}" wx:key="label">
+              <view 
+                class="option-item {{currentAnswer === item.label ? 'selected' : ''}}"
+                data-label="{{item.label}}"
+                bindtap="selectAnswer"
+              >
+                <view class="option-label">{{item.label}}</view>
+                <view class="option-content">
+                  <view class="option-text">{{item.text}}</view>
+                </view>
+              </view>
+            </block>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部导航 -->
+    <view class="test-footer">
+      <button 
+        class="nav-button-secondary {{currentQuestion === 0 ? 'disabled' : ''}}"
+        bindtap="prevQuestion"
+        disabled="{{currentQuestion === 0}}"
+      >
+        上一题
+      </button>
+      
+      <view class="footer-info">
+        <text class="footer-progress">{{currentAnswer ? '已选择' : '请选择'}}</text>
+      </view>
+      
+      <button 
+        class="nav-button-primary"
+        bindtap="nextQuestion"
+        wx:if="{{currentAnswer}}"
+      >
+        {{currentQuestion === totalQuestions - 1 ? '完成测试' : '下一题'}}
+      </button>
+    </view>
+  </view>
+
+  <!-- 退出确认弹窗 -->
+  <view class="modal-overlay" wx:if="{{showConfirmExit}}" bindtap="cancelExit">
+    <view class="modal-content" catchtap="">
+      <view class="modal-header">
+        <view class="modal-icon">⚠️</view>
+        <view class="modal-title">确认退出测试</view>
+      </view>
+      
+      <view class="modal-body">
+        <text class="modal-text">退出后将丢失当前答题进度，确定要退出吗？</text>
+      </view>
+      
+      <view class="modal-footer">
+        <button class="modal-btn-secondary" bindtap="cancelExit">取消</button>
+        <button class="modal-btn-primary" bindtap="confirmExitTest">确认退出</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,174 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+page {
+  background: #F8F5FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* 通用按钮样式 */
+.btn-primary {
+  background: linear-gradient(135deg, #7B68EE 0%, #9370DB 100%);
+  color: white;
+  border: none;
+  border-radius: 50rpx;
+  padding: 24rpx 60rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  box-shadow: 0 8rpx 24rpx rgba(123, 104, 238, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 4rpx 12rpx rgba(123, 104, 238, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: #7B68EE;
+  border: 2rpx solid #7B68EE;
+  border-radius: 50rpx;
+  padding: 22rpx 56rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:active {
+  background: #7B68EE;
+  color: white;
+}
+
+/* 卡片样式 */
+.card {
+  background: white;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin: 20rpx 0;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+/* 文本样式 */
+.text-title {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #2D3748;
+  margin-bottom: 16rpx;
+}
+
+.text-subtitle {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #4A5568;
+  margin-bottom: 12rpx;
+}
+
+.text-content {
+  font-size: 28rpx;
+  color: #718096;
+  line-height: 1.6;
+}
+
+.text-highlight {
+  color: #7B68EE;
+  font-weight: 600;
+}
+
+/* 进度条样式 */
+.progress-bar {
+  width: 100%;
+  height: 12rpx;
+  background: #E2E8F0;
+  border-radius: 6rpx;
+  overflow: hidden;
+  margin: 30rpx 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7B68EE 0%, #9370DB 100%);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+/* 输入框样式 */
+.input-field {
+  background: white;
+  border: 2rpx solid #E2E8F0;
+  border-radius: 16rpx;
+  padding: 24rpx 32rpx;
+  font-size: 28rpx;
+  color: #2D3748;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #7B68EE;
+  box-shadow: 0 0 0 6rpx rgba(123, 104, 238, 0.1);
+}
+
+/* 分割线 */
+.divider {
+  height: 2rpx;
+  background: #E2E8F0;
+  margin: 40rpx 0;
+}
+
+/* 布局工具类 */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.margin-top {
+  margin-top: 20rpx;
+}
+
+.margin-bottom {
+  margin-bottom: 20rpx;
+}
+
+.padding {
+  padding: 30rpx;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

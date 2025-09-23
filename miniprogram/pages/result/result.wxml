@@ -1,0 +1,214 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-content">
+      <view class="loading-icon">📊</view>
+      <view class="loading-text">正在生成分析报告...</view>
+      <view class="loading-tip">请稍候片刻</view>
+    </view>
+  </view>
+
+  <!-- 结果内容 -->
+  <view class="result-container" wx:if="{{!loading && mbtiResult && mbtiReport}}">
+    <!-- 顶部信息栏 -->
+    <view class="result-header">
+      <view class="header-left">
+        <view class="type-card">
+          <view class="type-title">{{mbtiResult.mbti_type}}</view>
+          <view class="type-subtitle">{{mbtiReport.metadata.nickname}}</view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">测试版本</view>
+          <view class="info-value">{{mbtiResult.test_version === 'simple' ? '快速测试' : '深度测试'}}</view>
+        </view>
+      </view>
+      
+      <view class="header-right">
+        <view class="test-info">
+          <view class="info-label">测试用时</view>
+          <view class="info-value">{{formatTime(mbtiResult.test_duration)}}</view>
+        </view>
+        <view class="test-info">
+          <view class="info-label">测试时间</view>
+          <view class="info-value">{{formatDate(mbtiResult.created_at)}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 主标题区域 -->
+    <view class="main-title-section">
+      <view class="title-icon">{{mbtiReport.metadata.title}}</view>
+      <view class="title-main">{{mbtiReport.metadata.nickname}}</view>
+      <view class="title-subtitle">{{mbtiReport.personality_profile.imagery}}</view>
+    </view>
+
+    <!-- 人格描述 -->
+    <view class="personality-section">
+      <view class="section-title">人格画像</view>
+      <view class="personality-card">
+        <view class="card-description">{{mbtiReport.personality_profile.description}}</view>
+        <view class="card-analysis">
+          <view class="analysis-item">
+            <view class="analysis-icon">🧠</view>
+            <view class="analysis-content">
+              <view class="analysis-title">心理学解析</view>
+              <view class="analysis-text">{{mbtiReport.personality_profile.psychological_analysis}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 超能力展示 -->
+    <view class="superpowers-section">
+      <view class="section-title">超能力清单</view>
+      <view class="superpowers-grid">
+        <view 
+          class="superpower-item"
+          wx:for="{{mbtiReport.superpowers}}"
+          wx:key="ability"
+        >
+          <view class="power-icon">✨</view>
+          <view class="power-content">
+            <view class="power-title">{{item.ability}}</view>
+            <view class="power-desc">{{item.description}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 维度分析 -->
+    <view class="dimensions-section">
+      <view class="section-title">维度分析</view>
+      <view class="dimensions-card">
+        <view class="dimensions-grid">
+          <view 
+            class="dimension-item"
+            wx:for="{{mbtiResult.dimension_details}}"
+            wx:key="winner"
+          >
+            <view class="dimension-type">
+              <text class="dimension-name">{{item.winner}}</text>
+              <text class="dimension-full">{{dimensionNames[item.winner]}}</text>
+            </view>
+            <view class="dimension-scores">
+              <view class="score-pair">
+                <text class="score-label E">E: {{item.E}}</text>
+                <text class="score-label I">I: {{item.I}}</text>
+              </view>
+              <view class="score-pair" wx:if="{{item.winner === 'E' || item.winner === 'I'}}">
+                <text class="score-label S">S: {{item.S}}</text>
+                <text class="score-label N">N: {{item.N}}</text>
+              </view>
+              <view class="score-pair" wx:if="{{item.winner === 'S' || item.winner === 'N'}}">
+                <text class="score-label T">T: {{item.T}}</text>
+                <text class="score-label F">F: {{item.F}}</text>
+              </view>
+              <view class="score-pair" wx:if="{{item.winner === 'T' || item.winner === 'F'}}">
+                <text class="score-label J">J: {{item.J}}</text>
+                <text class="score-label P">P: {{item.P}}</text>
+              </view>
+            </view>
+            <view class="dimension-strength" wx:if="{{mbtiResult.strengths}}">
+              <view class="strength-bar">
+                <view class="strength-fill" style="width: {{mbtiResult.strengths[getStrengthKey(item.winner)]}}%"></view>
+              </view>
+              <view class="strength-text">{{mbtiResult.strengths[getStrengthKey(item.winner)]}}%</view>
+              <view class="strength-desc">{{getStrengthDescription(mbtiResult.strengths[getStrengthKey(item.winner)])}}</view>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 置信度显示 -->
+        <view class="confidence-section" wx:if="{{mbtiResult.confidence}}">
+          <view class="confidence-title">测试置信度</view>
+          <view class="confidence-value">{{mbtiResult.confidence}}%</view>
+          <view class="confidence-level">{{getConfidenceLevel(mbtiResult.confidence).level}}</view>
+          <view class="confidence-bar">
+            <view class="confidence-fill" style="width: {{mbtiResult.confidence}}%; background: {{getConfidenceLevel(mbtiResult.confidence).color}}"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 职场指南 -->
+    <view class="career-section">
+      <view class="section-title">职场人格</view>
+      <view class="career-card">
+        <view class="career-motto">"{{mbtiReport.career_profile.motto}}"</view>
+        <view class="career-roles">
+          <view class="roles-title">适合角色</view>
+          <view class="roles-grid">
+            <view 
+              class="role-item"
+              wx:for="{{mbtiReport.career_profile.suitable_roles}}"
+              wx:key="category"
+            >
+              <view class="role-category">{{item.category}}</view>
+              <view class="role-positions">{{item.positions.join('、')}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 恋爱指南 -->
+    <view class="love-section">
+      <view class="section-title">恋爱指南</view>
+      <view class="love-card">
+        <view class="love-item">
+          <view class="love-icon">💕</view>
+          <view class="love-content">
+            <view class="love-title">理想型</view>
+            <view class="love-text">{{mbtiReport.love_guide.ideal_partner}}</view>
+          </view>
+        </view>
+        <view class="love-item">
+          <view class="love-icon">💗</view>
+          <view class="love-content">
+            <view class="love-title">恋爱模式</view>
+            <view class="love-text">{{mbtiReport.love_guide.relationship_mode}}</view>
+          </view>
+        </view>
+        <view class="love-item">
+          <view class="love-icon">💝</view>
+          <view class="love-content">
+            <view class="love-title">表白方式</view>
+            <view class="love-text">{{mbtiReport.love_guide.confession_style}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部操作按钮 -->
+    <view class="action-section">
+      <view class="action-buttons">
+        <button class="action-btn secondary" bindtap="viewDetailedAnalysis">
+          <view class="btn-icon">📊</view>
+          <view class="btn-text">详细解析</view>
+        </button>
+        <button class="action-btn secondary" bindtap="generateImageReport">
+          <view class="btn-icon">🖼️</view>
+          <view class="btn-text">生成图片</view>
+        </button>
+        <button class="action-btn primary" bindtap="retakeTest">
+          <view class="btn-icon">🔄</view>
+          <view class="btn-text">重新测试</view>
+        </button>
+        <button class="action-btn secondary {{isFavorite ? 'active' : ''}}" bindtap="toggleFavorite">
+          <view class="btn-icon">{{isFavorite ? '❤️' : '🤍'}}</view>
+          <view class="btn-text">{{isFavorite ? '已收藏' : '收藏'}}</view>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分享提示 -->
+  <view class="share-tip" wx:if="{{!loading && mbtiResult && !isShared}}">
+    <view class="tip-content">
+      <text class="tip-icon">💡</text>
+      <text class="tip-text">分享给你的朋友，看看大家都是什么性格类型！</text>
+    </view>
+  </view>
+</view>

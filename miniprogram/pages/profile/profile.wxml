@@ -1,0 +1,119 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-section">
+    <view class="user-card">
+      <view class="user-avatar-container" bindtap="getUserProfile">
+        <image 
+          class="user-avatar" 
+          src="{{userInfo ? userInfo.avatarUrl : '/images/default-avatar.png'}}" 
+          mode="aspectFill"
+        ></image>
+        <view class="avatar-edit-icon" wx:if="{{!userInfo}}">+</view>
+      </view>
+      
+      <view class="user-info">
+        <view class="user-name">{{userInfo ? userInfo.nickName : '点击登录'}}</view>
+        <view class="user-desc">{{userInfo ? '已登录用户' : '登录后可保存测试记录'}}</view>
+      </view>
+      
+      <view class="user-actions" bindtap="getUserProfile" wx:if="{{!userInfo}}">
+        <button class="btn-primary">立即登录</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="stats-section" wx:if="{{userInfo}}">
+    <view class="stats-card">
+      <view class="stats-item">
+        <view class="stats-number">{{testResults.length}}</view>
+        <view class="stats-label">测试次数</view>
+      </view>
+      <view class="divider"></view>
+      <view class="stats-item">
+        <view class="stats-number">{{testResults.length > 0 ? '已解锁' : '未开始'}}</view>
+        <view class="stats-label">16型人格</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 测试记录区域 -->
+  <view class="history-section">
+    <view class="section-header">
+      <view class="section-title">测试记录</view>
+      <button class="refresh-btn" bindtap="loadUserResults">
+        <text class="refresh-icon">🔄</text>
+      </button>
+    </view>
+
+    <!-- 加载状态 -->
+    <view class="loading-container" wx:if="{{loading}}">
+      <view class="loading-text">加载中...</view>
+    </view>
+
+    <!-- 无数据状态 -->
+    <view class="empty-container" wx:if="{{!loading && testResults.length === 0}}">
+      <view class="empty-icon">📝</view>
+      <view class="empty-title">暂无测试记录</view>
+      <view class="empty-desc">开始你的第一次MBTI性格测试吧</view>
+      <button class="btn-primary" bindtap="goToHome">开始测试</button>
+    </view>
+
+    <!-- 测试记录列表 -->
+    <view class="history-list" wx:if="{{!loading && testResults.length > 0}}">
+      <view 
+        class="history-item"
+        wx:for="{{testResults}}"
+        wx:key="_id"
+        bindtap="viewResult"
+        data-id="{{item._id}}"
+      >
+        <view class="history-type">{{item.mbti_type}}</view>
+        <view class="history-info">
+          <view class="history-title">{{item.mbti_type}} - {{item.test_version === 'simple' ? '快速测试' : '深度测试'}}</view>
+          <view class="history-time">{{item.created_at}}</view>
+        </view>
+        <view class="history-arrow">></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能推荐区域 -->
+  <view class="recommend-section">
+    <view class="section-title">推荐功能</view>
+    <view class="recommend-grid">
+      <view class="recommend-item" bindtap="goToHome">
+        <view class="recommend-icon">🧠</view>
+        <view class="recommend-title">再次测试</view>
+        <view class="recommend-desc">试试不同的测试版本</view>
+      </view>
+      <view class="recommend-item">
+        <view class="recommend-icon">📊</view>
+        <view class="recommend-title">结果分析</view>
+        <view class="recommend-desc">深度解读你的性格</view>
+      </view>
+      <view class="recommend-item">
+        <view class="recommend-icon">👥</view>
+        <view class="recommend-title">朋友测试</view>
+        <view class="recommend-desc">邀请好友一起测试</view>
+      </view>
+      <view class="recommend-item">
+        <view class="recommend-icon">📚</view>
+        <view class="recommend-title">学习资料</view>
+        <view class="recommend-desc">了解MBTI相关知识</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer-section">
+    <view class="footer-text">
+      <text>MBTI测试仅供参考，</text>
+      <text>性格会随着经历和成长而发展变化</text>
+    </view>
+    <view class="footer-tips">
+      <text>💡 建议：定期测试，观察自己的成长变化</text>
+    </view>
+  </view>
+</view>

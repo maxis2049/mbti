@@ -1,0 +1,87 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 欢迎区域 -->
+  <view class="welcome-section">
+    <view class="welcome-text">{{welcomeText}}</view>
+    <view class="welcome-subtitle">{{subtitle}}</view>
+    
+    <!-- 用户信息 -->
+    <view class="user-info" wx:if="{{userInfo}}">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+
+  <!-- 测试类型选择 -->
+  <view class="test-types-section">
+    <view class="section-title">选择测试方式</view>
+    
+    <view class="test-type-grid">
+      <view 
+        class="test-type-card" 
+        wx:for="{{testTypes}}" 
+        wx:key="id"
+        data-type="{{item.id}}"
+        bindtap="selectTestType"
+        style="border-color: {{item.color}}"
+      >
+        <view class="card-icon" style="color: {{item.color}}">{{item.icon}}</view>
+        <view class="card-content">
+          <view class="card-title" style="color: {{item.color}}">{{item.title}}</view>
+          <view class="card-subtitle">{{item.subtitle}}</view>
+          <view class="card-description">{{item.description}}</view>
+        </view>
+        <view class="card-arrow">→</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最近测试记录 -->
+  <view class="recent-tests-section" wx:if="{{recentTests.length > 0}}">
+    <view class="section-header">
+      <view class="section-title">最近测试</view>
+      <view class="view-all" bindtap="viewHistory">查看全部 ></view>
+    </view>
+    
+    <view class="recent-tests-list">
+      <view 
+        class="recent-test-item"
+        wx:for="{{recentTests}}"
+        wx:key="_id"
+        data-id="{{item._id}}"
+        bindtap="viewResult"
+      >
+        <view class="test-result-type">{{item.mbti_type}}</view>
+        <view class="test-result-info">
+          <view class="test-result-title">{{item.metadata.nickname}}</view>
+          <view class="test-result-time">{{item.created_at}}</view>
+        </view>
+        <view class="test-result-arrow">></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据初始化按钮（临时） -->
+  <view class="admin-section" wx:if="{{isAdminMode}}">
+    <view class="admin-title">管理员功能</view>
+    <button class="btn-admin" bindtap="initDatabase">初始化数据库</button>
+    <button class="btn-admin" bindtap="importData">导入数据</button>
+    <button class="btn-admin btn-quick" bindtap="quickImport">快速导入（测试）</button>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer-section">
+    <view class="footer-text">
+      <text>MBTI测试仅供参考，</text>
+      <text>性格会随着经历和成长而发展变化</text>
+    </view>
+    <view class="footer-tips">
+      <text>💡 建议：定期测试，观察自己的成长变化</text>
+    </view>
+    
+    <!-- 激活管理员模式（临时） -->
+    <view class="admin-activate" bindtap="toggleAdminMode">
+      <text class="admin-hint">长按此处5次激活管理员模式</text>
+    </view>
+  </view>
+</view>
