@@ -1,0 +1,542 @@
+{
+  "questions": [
+    {
+      "question_id": 1,
+      "question_text": "在聚会或社交场合中，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "主动和很多人交谈，感到精力充沛",
+          "dimension": "E",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "更喜欢和少数几个人深入交流",
+          "dimension": "I",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "EI",
+      "version": "simple",
+      "category": "精力来源",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 2,
+      "question_text": "做决定时，你更倾向于：",
+      "options": [
+        {
+          "label": "A",
+          "text": "基于逻辑和客观分析做决定",
+          "dimension": "T",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "考虑他人感受和价值观做决定",
+          "dimension": "F",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "TF",
+      "version": "simple",
+      "category": "决策方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 3,
+      "question_text": "面对新任务时，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "喜欢有详细的计划和步骤",
+          "dimension": "J",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "喜欢灵活处理，随性而为",
+          "dimension": "P",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "JP",
+      "version": "simple",
+      "category": "生活方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 4,
+      "question_text": "在学习新知识时，你更注重：",
+      "options": [
+        {
+          "label": "A",
+          "text": "实际应用和具体事实",
+          "dimension": "S",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "理论概念和未来可能性",
+          "dimension": "N",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "SN",
+      "version": "simple",
+      "category": "认知方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 5,
+      "question_text": "在团队工作中，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "主动发言，积极参与讨论",
+          "dimension": "E",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "先倾听思考，再发表意见",
+          "dimension": "I",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "EI",
+      "version": "simple",
+      "category": "精力来源",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 6,
+      "question_text": "解决冲突时，你更倾向于：",
+      "options": [
+        {
+          "label": "A",
+          "text": "分析问题，找出根本原因",
+          "dimension": "T",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "关注各方感受，寻求和解",
+          "dimension": "F",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "TF",
+      "version": "simple",
+      "category": "决策方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 7,
+      "question_text": "对于时间安排，你更喜欢：",
+      "options": [
+        {
+          "label": "A",
+          "text": "制定详细的日程表并严格执行",
+          "dimension": "J",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "保持开放，随时调整计划",
+          "dimension": "P",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "JP",
+      "version": "simple",
+      "category": "生活方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 8,
+      "question_text": "在选择工作时，你更看重：",
+      "options": [
+        {
+          "label": "A",
+          "text": "具体的技能要求和实际职责",
+          "dimension": "S",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "发展前景和潜在机会",
+          "dimension": "N",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "SN",
+      "version": "simple",
+      "category": "认知方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 9,
+      "question_text": "在休息日，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "喜欢和朋友一起活动",
+          "dimension": "E",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "喜欢独处或安静的活动",
+          "dimension": "I",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "EI",
+      "version": "simple",
+      "category": "精力来源",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 10,
+      "question_text": "在做重要决定时，你依赖：",
+      "options": [
+        {
+          "label": "A",
+          "text": "事实和数据",
+          "dimension": "T",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "直觉和感受",
+          "dimension": "F",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "TF",
+      "version": "simple",
+      "category": "决策方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 11,
+      "question_text": "对于工作环境，你更喜欢：",
+      "options": [
+        {
+          "label": "A",
+          "text": "有序、结构化的环境",
+          "dimension": "J",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "灵活、自由的环境",
+          "dimension": "P",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "JP",
+      "version": "simple",
+      "category": "生活方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 12,
+      "question_text": "在解决问题时，你更：",
+      "options": [
+        {
+          "label": "A",
+          "text": "关注眼前的实际问题",
+          "dimension": "S",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "思考长远的解决方案",
+          "dimension": "N",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "SN",
+      "version": "simple",
+      "category": "认知方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 13,
+      "question_text": "在演讲或汇报时，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "表现得自信从容，享受关注",
+          "dimension": "E",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "感到紧张，希望尽快结束",
+          "dimension": "I",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "EI",
+      "version": "simple",
+      "category": "精力来源",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 14,
+      "question_text": "在评价他人时，你更注重：",
+      "options": [
+        {
+          "label": "A",
+          "text": "能力和成就",
+          "dimension": "T",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "人品和态度",
+          "dimension": "F",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "TF",
+      "version": "simple",
+      "category": "决策方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 15,
+      "question_text": "对于旅行计划，你倾向于：",
+      "options": [
+        {
+          "label": "A",
+          "text": "详细规划每个细节",
+          "dimension": "J",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "即兴安排，随遇而安",
+          "dimension": "P",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "JP",
+      "version": "simple",
+      "category": "生活方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 16,
+      "question_text": "在工作中，你更：",
+      "options": [
+        {
+          "label": "A",
+          "text": "注重细节和准确性",
+          "dimension": "S",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "关注整体和创新性",
+          "dimension": "N",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "SN",
+      "version": "simple",
+      "category": "认知方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 17,
+      "question_text": "在社交网络上，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "经常分享生活和想法",
+          "dimension": "E",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "很少分享，主要是浏览",
+          "dimension": "I",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "EI",
+      "version": "simple",
+      "category": "精力来源",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 18,
+      "question_text": "在帮助他人时，你更倾向于：",
+      "options": [
+        {
+          "label": "A",
+          "text": "提供实际解决方案",
+          "dimension": "T",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "给予情感支持和鼓励",
+          "dimension": "F",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "TF",
+      "version": "simple",
+      "category": "决策方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 19,
+      "question_text": "对于任务清单，你：",
+      "options": [
+        {
+          "label": "A",
+          "text": "必须按清单逐一完成",
+          "dimension": "J",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "可以随时调整优先级",
+          "dimension": "P",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "JP",
+      "version": "simple",
+      "category": "生活方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 20,
+      "question_text": "在学习时，你更喜欢：",
+      "options": [
+        {
+          "label": "A",
+          "text": "具体的例子和练习",
+          "dimension": "S",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "抽象的理论和概念",
+          "dimension": "N",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "SN",
+      "version": "simple",
+      "category": "认知方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 21,
+      "question_text": "在会议中，你通常：",
+      "options": [
+        {
+          "label": "A",
+          "text": "积极发言，主导讨论",
+          "dimension": "E",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "认真倾听，谨慎发言",
+          "dimension": "I",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "EI",
+      "version": "simple",
+      "category": "精力来源",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 22,
+      "question_text": "在批评他人时，你更：",
+      "options": [
+        {
+          "label": "A",
+          "text": "直接指出问题和改进建议",
+          "dimension": "T",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "委婉表达，避免伤害感情",
+          "dimension": "F",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "TF",
+      "version": "simple",
+      "category": "决策方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 23,
+      "question_text": "对于工作方式，你更：",
+      "options": [
+        {
+          "label": "A",
+          "text": "喜欢在截止日期前完成",
+          "dimension": "J",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "喜欢在压力下冲刺",
+          "dimension": "P",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "JP",
+      "version": "simple",
+      "category": "生活方式",
+      "difficulty": "easy"
+    },
+    {
+      "question_id": 24,
+      "question_text": "在面对挑战时，你更：",
+      "options": [
+        {
+          "label": "A",
+          "text": "运用已知技能和方法",
+          "dimension": "S",
+          "weight": 1
+        },
+        {
+          "label": "B",
+          "text": "尝试新的思路和方法",
+          "dimension": "N",
+          "weight": 1
+        }
+      ],
+      "dimension_group": "SN",
+      "version": "simple",
+      "category": "认知方式",
+      "difficulty": "easy"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_questions": 24,
+    "dimensions": ["E", "I", "S", "N", "T", "F", "J", "P"],
+    "dimension_groups": ["EI", "SN", "TF", "JP"],
+    "scoring": {
+      "type": "simple",
+      "description": "每个维度组得分为该维度选项选择次数"
+    }
+  }
+}

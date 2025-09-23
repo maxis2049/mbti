@@ -1,0 +1,1142 @@
+{
+  "questions": [
+    {
+      "question_id": 1,
+      "question_text": "当你要外出一整天，你会",
+      "options": [
+        { "label": "A", "text": "计划你要做什么和在什么时候做", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "说去就去", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 2,
+      "question_text": "你认为自己是一个",
+      "options": [
+        { "label": "A", "text": "较为随兴所至的人", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "较为有条理的人", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 3,
+      "question_text": "假如你是一位老师，你会选教",
+      "options": [
+        { "label": "A", "text": "以事实为主的课程", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "涉及理论的课程", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 4,
+      "question_text": "你通常",
+      "options": [
+        { "label": "A", "text": "与人容易混熟", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "比较沉静或矜持", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 5,
+      "question_text": "一般来说，你和哪些人比较合得来？",
+      "options": [
+        { "label": "A", "text": "富于想象力的人", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "现实的人", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 6,
+      "question_text": "你是否经常让",
+      "options": [
+        { "label": "A", "text": "你的情感支配你的理智", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "你的理智主宰你的情感", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 7,
+      "question_text": "处理许多事情上，你会喜欢",
+      "options": [
+        { "label": "A", "text": "凭兴所至行事", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "按照计划行事", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 8,
+      "question_text": "你是否",
+      "options": [
+        { "label": "A", "text": "容易让人了解", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "难于让人了解", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 9,
+      "question_text": "按照程序表做事，",
+      "options": [
+        { "label": "A", "text": "合你心意", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "令你感到束缚", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 10,
+      "question_text": "当你有一份特别的任务，你会喜欢",
+      "options": [
+        { "label": "A", "text": "开始前小心组织计划", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "边做边找须做什么", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 11,
+      "question_text": "在大多数情况下，你会选择",
+      "options": [
+        { "label": "A", "text": "顺其自然", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "按程序表做事", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 12,
+      "question_text": "大多数人会说你是一个",
+      "options": [
+        { "label": "A", "text": "重视自我隐私的人", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "非常坦率开放的人", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 13,
+      "question_text": "你宁愿被人认为是一个",
+      "options": [
+        { "label": "A", "text": "实事求是的人", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "机灵的人", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 14,
+      "question_text": "在一大群人当中，通常是",
+      "options": [
+        { "label": "A", "text": "你介绍大家认识", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "别人介绍你", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 15,
+      "question_text": "你会跟哪些人做朋友？",
+      "options": [
+        { "label": "A", "text": "常提出新注意的", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "脚踏实地的", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 16,
+      "question_text": "你倾向",
+      "options": [
+        { "label": "A", "text": "重视感情多于逻辑", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "重视逻辑多于感情", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 17,
+      "question_text": "你比较喜欢",
+      "options": [
+        { "label": "A", "text": "坐观事情发展才作计划", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "很早就作计划", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 18,
+      "question_text": "你更喜欢花很多的时间",
+      "options": [
+        { "label": "A", "text": "一个人独处", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "合别人在一起", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 19,
+      "question_text": "与很多人一起会",
+      "options": [
+        { "label": "A", "text": "令你活力培增", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "常常令你心力憔悴", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 20,
+      "question_text": "你比较喜欢",
+      "options": [
+        { "label": "A", "text": "很早便把约会、社交聚集等事情安排妥当", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "无拘无束，看当时有什么好玩就做什么", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 21,
+      "question_text": "计划一个旅程时，你较喜欢",
+      "options": [
+        { "label": "A", "text": "大部分的时间都是跟当天的感觉行事", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "事先知道大部分的日子会做什么", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 22,
+      "question_text": "在社交聚会中，你",
+      "options": [
+        { "label": "A", "text": "有时感到郁闷", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "常常乐在其中", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 23,
+      "question_text": "你通常",
+      "options": [
+        { "label": "A", "text": "和别人容易混熟", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "趋向自处一隅", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 24,
+      "question_text": "哪些人会更吸引你？",
+      "options": [
+        { "label": "A", "text": "一个思想敏捷及非常聪颖的人", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "实事求是，具丰富常识的人", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 25,
+      "question_text": "在日常工作中，你会",
+      "options": [
+        { "label": "A", "text": "颇为喜欢处理迫使你分秒必争的突发", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "通常预先计划，以免要在压力下工作", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 26,
+      "question_text": "你认为别人一般",
+      "options": [
+        { "label": "A", "text": "要花很长时间才认识你", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "用很短的时间便认识你", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 27,
+      "question_text": "A.注重隐私 B.坦率开放",
+      "options": [
+        { "label": "A", "text": "注重隐私", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "坦率开放", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 28,
+      "question_text": "A.预先安排的 B.无计划的",
+      "options": [
+        { "label": "A", "text": "预先安排的", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "无计划的", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 29,
+      "question_text": "A.抽象 B.具体",
+      "options": [
+        { "label": "A", "text": "抽象", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "具体", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 30,
+      "question_text": "A.温柔 B.坚定",
+      "options": [
+        { "label": "A", "text": "温柔", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "坚定", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 31,
+      "question_text": "A.思考 B.感受",
+      "options": [
+        { "label": "A", "text": "思考", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "感受", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 32,
+      "question_text": "A.事实 B.意念",
+      "options": [
+        { "label": "A", "text": "事实", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "意念", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 33,
+      "question_text": "A.冲动 B.决定",
+      "options": [
+        { "label": "A", "text": "冲动", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "决定", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 34,
+      "question_text": "A.热衷 B.文静",
+      "options": [
+        { "label": "A", "text": "热衷", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "文静", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 35,
+      "question_text": "A.文静 B.外向",
+      "options": [
+        { "label": "A", "text": "文静", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "外向", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 36,
+      "question_text": "A.有系统 B.随意",
+      "options": [
+        { "label": "A", "text": "有系统", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "随意", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 37,
+      "question_text": "A.理论 B.肯定",
+      "options": [
+        { "label": "A", "text": "理论", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "肯定", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 38,
+      "question_text": "A.敏感 B.公正",
+      "options": [
+        { "label": "A", "text": "敏感", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "公正", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 39,
+      "question_text": "A.令人信服 B.感人的",
+      "options": [
+        { "label": "A", "text": "令人信服", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "感人的", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 40,
+      "question_text": "A.声明 B.概念",
+      "options": [
+        { "label": "A", "text": "声明", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "概念", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 41,
+      "question_text": "A.不受约束 B.预先安排",
+      "options": [
+        { "label": "A", "text": "不受约束", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "预先安排", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 42,
+      "question_text": "A.矜持 B.健谈",
+      "options": [
+        { "label": "A", "text": "矜持", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "健谈", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 43,
+      "question_text": "A.有条不紊 B.不拘小节",
+      "options": [
+        { "label": "A", "text": "有条不紊", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "不拘小节", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 44,
+      "question_text": "A.意念 B.实况",
+      "options": [
+        { "label": "A", "text": "意念", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "实况", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 45,
+      "question_text": "A.同情怜悯 B.远见",
+      "options": [
+        { "label": "A", "text": "同情怜悯", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "远见", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 46,
+      "question_text": "A.利益 B.祝福",
+      "options": [
+        { "label": "A", "text": "利益", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "祝福", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 47,
+      "question_text": "A.务实的 B.理论的",
+      "options": [
+        { "label": "A", "text": "务实的", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "理论的", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 48,
+      "question_text": "A.朋友不多 B.朋友众多",
+      "options": [
+        { "label": "A", "text": "朋友不多", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "朋友众多", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 49,
+      "question_text": "A.有系统 B.即兴",
+      "options": [
+        { "label": "A", "text": "有系统", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "即兴", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 50,
+      "question_text": "A.富想象的 B.以事论事",
+      "options": [
+        { "label": "A", "text": "富想象的", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "以事论事", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 51,
+      "question_text": "A.亲切的 B.客观的",
+      "options": [
+        { "label": "A", "text": "亲切的", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "客观的", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 52,
+      "question_text": "A.客观的 B.热情的",
+      "options": [
+        { "label": "A", "text": "客观的", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "热情的", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 53,
+      "question_text": "A.建造 B.发明",
+      "options": [
+        { "label": "A", "text": "建造", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "发明", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 54,
+      "question_text": "A.文静 B.爱合群",
+      "options": [
+        { "label": "A", "text": "文静", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "爱合群", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 55,
+      "question_text": "A.理论 B.事实",
+      "options": [
+        { "label": "A", "text": "理论", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "事实", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 56,
+      "question_text": "A.富同情 B.合逻辑",
+      "options": [
+        { "label": "A", "text": "富同情", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "合逻辑", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 57,
+      "question_text": "A.具分析力 B.多愁善感",
+      "options": [
+        { "label": "A", "text": "具分析力", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "多愁善感", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 58,
+      "question_text": "A.合情合理 B.令人着迷",
+      "options": [
+        { "label": "A", "text": "合情合理", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "令人着迷", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 59,
+      "question_text": "当你要在一个星期内完成一个大项目，你在开始的时候会",
+      "options": [
+        { "label": "A", "text": "把要做的不同工作依次列出", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "马上动工", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 60,
+      "question_text": "在社交场合中，你经常会感到",
+      "options": [
+        { "label": "A", "text": "与某些人很难打开话匣儿和保持对话", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "与多数人都能从容地长谈", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 61,
+      "question_text": "要做许多人也做的事，你比较喜欢",
+      "options": [
+        { "label": "A", "text": "按照一般认可的方法去做", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "构想一个自己的想法", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 62,
+      "question_text": "你刚认识的朋友能否说出你的兴趣？",
+      "options": [
+        { "label": "A", "text": "马上可以", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "要待他们真正了解你之后才可以", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 63,
+      "question_text": "你通常较喜欢的科目是",
+      "options": [
+        { "label": "A", "text": "讲授概念和原则的", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "讲授事实和数据的", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 64,
+      "question_text": "哪个是较高的赞誉，或称许为？",
+      "options": [
+        { "label": "A", "text": "一贯感性的人", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "一贯理性的人", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 65,
+      "question_text": "你认为按照程序表做事",
+      "options": [
+        { "label": "A", "text": "有时是需要的，但一般来说你不大喜欢这样做", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "大多数情况下是有帮助而且是你喜欢做的", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 66,
+      "question_text": "和一群人在一起，你通常会选",
+      "options": [
+        { "label": "A", "text": "跟你很熟悉的个别人谈话", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "参与大伙的谈话", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 67,
+      "question_text": "在社交聚会上，你会",
+      "options": [
+        { "label": "A", "text": "是说话很多的一个", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "让别人多说话", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 68,
+      "question_text": "把周末期间要完成的事列成清单，这个主意会",
+      "options": [
+        { "label": "A", "text": "合你意", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "使你提不起劲", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 69,
+      "question_text": "哪个是较高的赞誉，或称许为",
+      "options": [
+        { "label": "A", "text": "能干的", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "富有同情心", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 70,
+      "question_text": "你通常喜欢",
+      "options": [
+        { "label": "A", "text": "事先安排你的社交约会", "dimension": "J", "weight": 1 },
+        { "label": "B", "text": "随兴之所至做事", "dimension": "P", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 71,
+      "question_text": "总的说来，要做一个大型作业时，你会选",
+      "options": [
+        { "label": "A", "text": "边做边想该做什么", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "首先把工作按步细分", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 72,
+      "question_text": "你能否滔滔不绝地与人聊天",
+      "options": [
+        { "label": "A", "text": "只限于跟你有共同兴趣的人", "dimension": "I", "weight": 1 },
+        { "label": "B", "text": "几乎跟任何人都可以", "dimension": "E", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 73,
+      "question_text": "你会",
+      "options": [
+        { "label": "A", "text": "跟随一些证明有效的方法", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "分析还有什么毛病，及针对尚未解决的难题", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 74,
+      "question_text": "为乐趣而阅读时，你会",
+      "options": [
+        { "label": "A", "text": "喜欢奇特或创新的表达方式", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "喜欢作者直话直说", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 75,
+      "question_text": "你宁愿替哪一类上司（或者老师）工作？",
+      "options": [
+        { "label": "A", "text": "天性淳良，但常常前后不一的", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "言词尖锐但永远合乎逻辑的", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 76,
+      "question_text": "你做事多数是",
+      "options": [
+        { "label": "A", "text": "按当天心情去做", "dimension": "P", "weight": 1 },
+        { "label": "B", "text": "照拟好的程序表去做", "dimension": "J", "weight": 1 }
+      ],
+      "dimension_group": "JP",
+      "version": "detailed",
+      "category": "生活方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 77,
+      "question_text": "你是否",
+      "options": [
+        { "label": "A", "text": "可以和任何人按需求从容地交谈", "dimension": "E", "weight": 1 },
+        { "label": "B", "text": "只是对某些人或在某种情况下才可以畅所欲言", "dimension": "I", "weight": 1 }
+      ],
+      "dimension_group": "EI",
+      "version": "detailed",
+      "category": "精力来源",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 78,
+      "question_text": "要作决定时，你认为比较重要的是",
+      "options": [
+        { "label": "A", "text": "据事实衡量", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "考虑他人的感受和意见", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 79,
+      "question_text": "A.想象的 B.真实的",
+      "options": [
+        { "label": "A", "text": "想象的", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "真实的", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 80,
+      "question_text": "A.仁慈慷慨的 B.意志坚定的",
+      "options": [
+        { "label": "A", "text": "仁慈慷慨的", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "意志坚定的", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 81,
+      "question_text": "A.公正的 B.有关怀心",
+      "options": [
+        { "label": "A", "text": "公正的", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "有关怀心", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 82,
+      "question_text": "A.制作 B.设计",
+      "options": [
+        { "label": "A", "text": "制作", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "设计", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 83,
+      "question_text": "A.可能性 B.必然性",
+      "options": [
+        { "label": "A", "text": "可能性", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "必然性", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 84,
+      "question_text": "A.温柔 B.力量",
+      "options": [
+        { "label": "A", "text": "温柔", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "力量", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 85,
+      "question_text": "A.实际 B.多愁善感",
+      "options": [
+        { "label": "A", "text": "实际", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "多愁善感", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 86,
+      "question_text": "A.制造 B.创造",
+      "options": [
+        { "label": "A", "text": "制造", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "创造", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 87,
+      "question_text": "A.新颖的 B.已知的",
+      "options": [
+        { "label": "A", "text": "新颖的", "dimension": "N", "weight": 1 },
+        { "label": "B", "text": "已知的", "dimension": "S", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 88,
+      "question_text": "A.同情 B.分析",
+      "options": [
+        { "label": "A", "text": "同情", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "分析", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 89,
+      "question_text": "A.坚持己见 B.温柔有爱心",
+      "options": [
+        { "label": "A", "text": "坚持己见", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "温柔有爱心", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 90,
+      "question_text": "A.具体的 B.抽象的",
+      "options": [
+        { "label": "A", "text": "具体的", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "抽象的", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 91,
+      "question_text": "A.全心投入 B.有决心的",
+      "options": [
+        { "label": "A", "text": "全心投入", "dimension": "F", "weight": 1 },
+        { "label": "B", "text": "有决心的", "dimension": "T", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 92,
+      "question_text": "A.能干 B.仁慈",
+      "options": [
+        { "label": "A", "text": "能干", "dimension": "T", "weight": 1 },
+        { "label": "B", "text": "仁慈", "dimension": "F", "weight": 1 }
+      ],
+      "dimension_group": "TF",
+      "version": "detailed",
+      "category": "决策方式",
+      "difficulty": "medium"
+    },
+    {
+      "question_id": 93,
+      "question_text": "A.实际 B.创新",
+      "options": [
+        { "label": "A", "text": "实际", "dimension": "S", "weight": 1 },
+        { "label": "B", "text": "创新", "dimension": "N", "weight": 1 }
+      ],
+      "dimension_group": "SN",
+      "version": "detailed",
+      "category": "认知方式",
+      "difficulty": "medium"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_questions": 93,
+    "dimensions": ["E", "I", "S", "N", "T", "F", "J", "P"],
+    "dimension_groups": ["EI", "SN", "TF", "JP"],
+    "scoring": {
+      "type": "detailed",
+      "description": "遍历每题用户选择，按选项的 dimension 维度累计分数，比较四个维度对得到 MBTI 类型；若平分，按偏好规则选择。",
+      "dimensionPairs": [
+        { "pair": ["E", "I"], "preference": "I", "description": "外向(E) vs 内向(I)" },
+        { "pair": ["S", "N"], "preference": "N", "description": "实感(S) vs 直觉(N)" },
+        { "pair": ["T", "F"], "preference": "F", "description": "思考(T) vs 情感(F)" },
+        { "pair": ["J", "P"], "preference": "P", "description": "判断(J) vs 认知(P)" }
+      ],
+      "alternativeScoring": [
+        { "dimension": "E/I", "formula": "(I - E) / 21 * 10", "interpretation": "正分为内倾(I)，负分为外倾(E)" },
+        { "dimension": "S/N", "formula": "(S - N) / 26 * 10", "interpretation": "正分为感觉(S)，负分为直觉(N)" },
+        { "dimension": "T/F", "formula": "(T - F) / 24 * 10", "interpretation": "正分为思考(T)，负分为情感(F)" },
+        { "dimension": "J/P", "formula": "(P - J) / 22 * 10", "interpretation": "正分为感知(P)，负分为判断(J)" }
+      ]
+    }
+  }
+}

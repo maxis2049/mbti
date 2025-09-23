@@ -1,0 +1,16 @@
+{
+  "name": "mbti-service",
+  "version": "1.0.0",
+  "description": "MBTI性格测试服务云函数",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import:data": "WX_ENV=$npm_config_env node data-import.js",
+    "import:data:local": "node data-import.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "~2.4.0"
+  }
+}
