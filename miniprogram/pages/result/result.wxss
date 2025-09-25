@@ -1,0 +1,162 @@
+/* 结果页样式美化 */
+
+.container {
+  padding: 16rpx 40rpx 40rpx;
+  background: #FAFAFC;
+  min-height: 100vh;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+.loading-content { text-align: center; color: #666; }
+.loading-icon { font-size: 64rpx; margin-bottom: 16rpx; }
+.loading-text { font-size: 28rpx; font-weight: 600; }
+.loading-tip { font-size: 24rpx; color: #999; margin-top: 8rpx; }
+
+/* 卡片通用 */
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(20, 20, 50, 0.06);
+  padding: 24rpx;
+}
+
+.result-container { display: flex; flex-direction: column; gap: 24rpx; }
+
+/* 顶部信息栏 */
+.result-header {
+  display: flex;
+  gap: 24rpx;
+}
+.header-left, .header-right { flex: 1; display: flex; flex-direction: column; gap: 16rpx; }
+
+.type-card {
+  composes: card;
+  background: linear-gradient(135deg, #7B68EE 0%, #9370DB 100%);
+  color: #fff;
+}
+.type-title {
+  font-size: 56rpx;
+  font-weight: 800;
+  letter-spacing: 4rpx;
+}
+.type-subtitle { margin-top: 6rpx; font-size: 28rpx; opacity: 0.9; }
+
+.info-item, .test-info { composes: card; }
+.info-label { font-size: 24rpx; color: #888; }
+.info-value { font-size: 32rpx; font-weight: 600; margin-top: 6rpx; }
+
+/* 主标题区域 */
+.main-title-section { composes: card; text-align: center; }
+.title-icon { font-size: 28rpx; color: #7B68EE; letter-spacing: 2rpx; }
+.title-main { font-size: 40rpx; font-weight: 800; margin-top: 8rpx; }
+.title-subtitle { font-size: 26rpx; color: #666; margin-top: 10rpx; }
+
+/* 人格描述 */
+.personality-section { }
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #333;
+  margin: 8rpx 0 12rpx;
+}
+.personality-card { composes: card; }
+.card-description { font-size: 28rpx; color: #333; line-height: 1.7; }
+.card-analysis { margin-top: 20rpx; }
+.analysis-item { display: flex; gap: 16rpx; align-items: flex-start; }
+.analysis-icon { font-size: 32rpx; }
+.analysis-title { font-size: 28rpx; font-weight: 700; color: #555; }
+.analysis-text { font-size: 26rpx; color: #666; margin-top: 6rpx; line-height: 1.6; }
+
+/* 超能力 */
+.superpowers-section { }
+.superpowers-grid {
+  composes: card;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+.superpower-item { background: #F7F7FB; border-radius: 16rpx; padding: 16rpx; display: flex; gap: 12rpx; }
+.power-icon { font-size: 32rpx; }
+.power-title { font-size: 28rpx; font-weight: 700; color: #333; }
+.power-desc { font-size: 24rpx; color: #666; margin-top: 6rpx; line-height: 1.6; }
+
+/* 维度分析 */
+.dimensions-section { }
+.dimensions-card { composes: card; }
+.dimensions-grid { display: grid; grid-template-columns: 1fr; gap: 16rpx; }
+.dimension-item { background: #F9F9FF; border: 2rpx solid #ECECFF; border-radius: 16rpx; padding: 16rpx; }
+.dimension-type { display: flex; gap: 12rpx; align-items: baseline; }
+.dimension-name { font-size: 32rpx; font-weight: 800; color: #7B68EE; }
+.dimension-full { font-size: 24rpx; color: #666; }
+.dimension-scores { margin-top: 12rpx; display: grid; gap: 8rpx; }
+.score-pair { display: flex; gap: 16rpx; color: #555; }
+.score-label { font-size: 24rpx; }
+
+.dimension-strength { margin-top: 16rpx; }
+.strength-bar { width: 100%; height: 14rpx; background: #EEE; border-radius: 999rpx; overflow: hidden; }
+.strength-fill { height: 100%; background: linear-gradient(90deg, #7B68EE, #9370DB); border-radius: 999rpx; }
+.strength-text { margin-top: 8rpx; font-size: 24rpx; color: #444; }
+.strength-desc { font-size: 22rpx; color: #777; margin-top: 4rpx; }
+
+/* 置信度 */
+.confidence-section { margin-top: 16rpx; text-align: center; }
+.confidence-title { font-size: 26rpx; color: #666; }
+.confidence-value { font-size: 44rpx; font-weight: 800; margin-top: 10rpx; color: #333; }
+.confidence-level { font-size: 24rpx; color: #7B68EE; margin-top: 6rpx; }
+.confidence-bar { margin-top: 14rpx; height: 14rpx; background: #EEE; border-radius: 999rpx; overflow: hidden; }
+.confidence-fill { height: 100%; border-radius: 999rpx; }
+
+/* 职场人格 */
+.career-section { }
+.career-card { composes: card; }
+.career-motto { font-size: 28rpx; color: #555; font-style: italic; background: #F7F7FB; border-left: 8rpx solid #7B68EE; padding: 12rpx 16rpx; border-radius: 8rpx; }
+.roles-title { font-size: 26rpx; color: #666; margin: 16rpx 0 8rpx; }
+.roles-grid { display: grid; grid-template-columns: 1fr; gap: 12rpx; }
+.role-item { background: #FAFAFC; border-radius: 12rpx; padding: 12rpx; }
+.role-category { font-size: 26rpx; font-weight: 700; color: #333; }
+.role-positions { font-size: 24rpx; color: #666; margin-top: 6rpx; }
+
+/* 恋爱指南 */
+.love-section { }
+.love-card { composes: card; display: grid; gap: 14rpx; }
+.love-item { display: flex; gap: 12rpx; align-items: flex-start; }
+.love-icon { font-size: 32rpx; }
+.love-title { font-size: 26rpx; font-weight: 700; color: #333; }
+.love-text { font-size: 24rpx; color: #666; margin-top: 4rpx; line-height: 1.6; }
+
+/* 底部操作按钮 */
+.action-section { }
+.action-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 16rpx; }
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  border-radius: 16rpx;
+  padding: 18rpx 0;
+  font-size: 28rpx;
+}
+.action-btn.primary { background: #7B68EE; color: #fff; box-shadow: 0 8rpx 24rpx rgba(123,104,238,0.28); }
+.action-btn.secondary { background: #fff; color: #333; border: 2rpx solid #EEE; }
+.action-btn.secondary.active { color: #E91E63; border-color: #F8BBD0; background: #FFF5F8; }
+.btn-icon { font-size: 32rpx; }
+
+/* 分享提示 */
+.share-tip { position: sticky; bottom: 0; margin-top: 8rpx; }
+.tip-content { background: #FFF8E1; color: #8D6E63; border: 2rpx dashed #FFECB3; border-radius: 16rpx; padding: 16rpx; display: flex; gap: 10rpx; align-items: center; }
+.tip-icon { font-size: 32rpx; }
+.tip-text { font-size: 24rpx; }
+
+/* 响应式微调 */
+@media (min-width: 500px) {
+  .superpowers-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .dimensions-grid { grid-template-columns: 1fr 1fr; }
+}
+
+

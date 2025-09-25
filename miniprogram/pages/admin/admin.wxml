@@ -1,0 +1,52 @@
+<!--pages/admin/admin.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">🔧 数据库管理</text>
+    <text class="subtitle">修复24题MBTI测试题目分组</text>
+  </view>
+
+  <view class="content">
+    <view class="section">
+      <text class="section-title">📊 问题说明</text>
+      <text class="description">
+        数据库中的24题分组与预期不符：
+        • 期望：1-6题为EI，7-12题为SN，13-18题为TF，19-24题为JP
+        • 实际：题目分组是交替分布的
+        
+        点击下方按钮可一键修复数据库中的题目分组。
+      </text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">🚀 操作区域</text>
+      
+      <button 
+        class="update-btn {{isUpdating ? 'updating' : ''}}" 
+        bindtap="updateDatabase"
+        disabled="{{isUpdating}}"
+      >
+        {{isUpdating ? '正在更新...' : '🔄 更新24题数据库'}}
+      </button>
+      
+      <button class="test-btn" bindtap="testQuestions">
+        🧪 测试24题功能
+      </button>
+      
+      <button class="home-btn" bindtap="goHome">
+        🏠 返回首页
+      </button>
+    </view>
+
+    <view class="section" wx:if="{{updateStatus}}">
+      <text class="section-title">📋 更新状态</text>
+      <view class="status-box">
+        <text class="status-text">{{updateStatus}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="footer-text">⚠️ 此操作需要管理员权限</text>
+    <text class="footer-text">更新完成后请重新测试24题功能</text>
+  </view>
+</view>

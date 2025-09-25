@@ -35,8 +35,8 @@
           <text class="tips-text">建议在安静环境下完成</text>
         </view>
         <view class="tips-item">
-          <text class="tips-icon">⏸</text>
-          <text class="tips-text">答案将自动保存，可随时暂停</text>
+          <text class="tips-icon">💾</text>
+          <text class="tips-text">进度自动保存，可随时退出继续</text>
         </view>
       </view>
     </view>
@@ -61,9 +61,9 @@
         <view class="timer-text">{{formatTime(timeSpent)}}</view>
       </view>
       <view class="header-right">
-        <view class="nav-button" bindtap="pauseTest">
-          <text class="nav-icon">⏸</text>
-          <text class="nav-text">暂停</text>
+        <view class="nav-button" bindtap="manualSaveProgress">
+          <text class="nav-icon">💾</text>
+          <text class="nav-text">保存</text>
         </view>
       </view>
     </view>
@@ -100,11 +100,12 @@
               class="option-item {{currentAnswer === 'A' ? 'selected' : ''}}"
               data-option="A"
               bindtap="selectAnswer"
+              hover-class="none"
             >
-              <view class="option-label">A</view>
-              <view class="option-content">
-                <view class="option-text">{{questions[currentQuestion].option_a.text}}</view>
-                <view class="option-dimension">
+              <view class="option-label" hover-class="none">A</view>
+              <view class="option-content" hover-class="none">
+                <view class="option-text" hover-class="none">{{questions[currentQuestion].option_a.text}}</view>
+                <view class="option-dimension" hover-class="none">
                   {{questions[currentQuestion].option_a.dimension === 'E' ? '外向' : 
                     questions[currentQuestion].option_a.dimension === 'I' ? '内向' :
                     questions[currentQuestion].option_a.dimension === 'S' ? '感觉' : 
@@ -120,11 +121,12 @@
               class="option-item {{currentAnswer === 'B' ? 'selected' : ''}}"
               data-option="B"
               bindtap="selectAnswer"
+              hover-class="none"
             >
-              <view class="option-label">B</view>
-              <view class="option-content">
-                <view class="option-text">{{questions[currentQuestion].option_b.text}}</view>
-                <view class="option-dimension">
+              <view class="option-label" hover-class="none">B</view>
+              <view class="option-content" hover-class="none">
+                <view class="option-text" hover-class="none">{{questions[currentQuestion].option_b.text}}</view>
+                <view class="option-dimension" hover-class="none">
                   {{questions[currentQuestion].option_b.dimension === 'E' ? '外向' : 
                     questions[currentQuestion].option_b.dimension === 'I' ? '内向' :
                     questions[currentQuestion].option_b.dimension === 'S' ? '感觉' : 
@@ -144,10 +146,11 @@
                 class="option-item {{currentAnswer === item.label ? 'selected' : ''}}"
                 data-label="{{item.label}}"
                 bindtap="selectAnswer"
+                hover-class="none"
               >
-                <view class="option-label">{{item.label}}</view>
-                <view class="option-content">
-                  <view class="option-text">{{item.text}}</view>
+                <view class="option-label" hover-class="none">{{item.label}}</view>
+                <view class="option-content" hover-class="none">
+                  <view class="option-text" hover-class="none">{{item.text}}</view>
                 </view>
               </view>
             </block>
@@ -189,7 +192,7 @@
       </view>
       
       <view class="modal-body">
-        <text class="modal-text">退出后将丢失当前答题进度，确定要退出吗？</text>
+        <text class="modal-text">您的答题进度将自动保存，下次可以继续完成测试。确定要退出吗？</text>
       </view>
       
       <view class="modal-footer">

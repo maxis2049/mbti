@@ -30,7 +30,8 @@ Page({
     userInfo: null,
     recentTests: [],
     isAdminMode: false,
-    adminClickCount: 0
+    adminClickCount: 0,
+    adminClickTimer: null
   },
 
   onLoad: function (options) {
@@ -103,31 +104,21 @@ Page({
       return;
     }
 
-    // 获取用户授权
-    wx.getUserProfile({
-      desc: '用于完善用户信息和保存测试记录',
+    // 提示用户需要完善个人信息
+    wx.showModal({
+      title: '完善个人信息',
+      content: '请前往个人中心完善头像和昵称信息',
+      confirmText: '去完善',
+      cancelText: '暂不',
       success: (res) => {
-        app.globalData.userInfo = {
-          nickName: res.userInfo.nickName,
-          avatarUrl: res.userInfo.avatarUrl
-        };
-        this.setData({
-          userInfo: app.globalData.userInfo
-        });
-        callback && callback();
-      },
-      fail: (err) => {
-        console.log('获取用户信息失败:', err);
-        wx.showModal({
-          title: '提示',
-          content: '需要用户授权才能保存测试记录',
-          confirmText: '去设置',
-          success: (res) => {
-            if (res.confirm) {
-              wx.openSetting();
-            }
-          }
-        });
+        if (res.confirm) {
+          wx.switchTab({
+            url: '/pages/profile/profile'
+          });
+        } else {
+          // 用户选择暂不完善，仍然可以继续使用
+          callback && callback();
+        }
       }
     });
   },
@@ -315,12 +306,76 @@ Page({
     });
   },
 
+  // 连续点击进入管理员模式
+  onWelcomeTextTap: function() {
+    this.data.adminClickCount++;
+    
+    // 清除之前的定时器
+    if (this.data.adminClickTimer) {
+      clearTimeout(this.data.adminClickTimer);
+    }
+    
+    // 设置新的定时器，2秒后重置计数
+    this.data.adminClickTimer = setTimeout(() => {
+      this.data.adminClickCount = 0;
+    }, 2000);
+    
+    console.log('点击次数:', this.data.adminClickCount);
+    
+    if (this.data.adminClickCount >= 5) {
+      // 连续点击5次，进入管理员模式
+      wx.navigateTo({
+        url: '/pages/admin/admin'
+      });
+      
+      // 重置计数
+      this.data.adminClickCount = 0;
+      if (this.data.adminClickTimer) {
+        clearTimeout(this.data.adminClickTimer);
+        this.data.adminClickTimer = null;
+      }
+      
+      wx.showToast({
+        title: '进入管理员模式',
+        icon: 'success'
+      });
+    } else if (this.data.adminClickCount >= 3) {
+      // 给用户提示
+      wx.showToast({
+        title: `再点击${5 - this.data.adminClickCount}次`,
+        icon: 'none',
+        duration: 1000
+      });
+    }
+  },
+
   // 分享功能
-  shareApp: function () {
+  // 分享给朋友
+  onShareAppMessage: function (res) {
+    // 分享事件来源：button（页面内分享按钮）、menu（右上角分享按钮）
+    if (res.from === 'button') {
+      console.log('通过分享按钮分享');
+    }
+    
     return {
       title: 'MBTI性格测试 - 发现真实的自己',
       path: '/pages/index/index',
-      imageUrl: '/images/share-banner.png'
+      imageUrl: '/images/share-banner.svg'
     };
+  },
+
+  // 分享到朋友圈
+  onShareTimeline: function () {
+    return {
+      title: 'MBTI性格测试 - 发现真实的自己',
+      imageUrl: '/images/share-banner.svg'
+    };
+  },
+
+  onUnload: function() {
+    // 页面卸载时清除定时器
+    if (this.data.adminClickTimer) {
+      clearTimeout(this.data.adminClickTimer);
+    }
   }
 });

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "测试结果",
+  "navigationBarBackgroundColor": "#7B68EE",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#F8F5FF",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 50
+}

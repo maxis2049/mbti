@@ -83,39 +83,87 @@
       <view class="section-title">维度分析</view>
       <view class="dimensions-card">
         <view class="dimensions-grid">
-          <view 
-            class="dimension-item"
-            wx:for="{{mbtiResult.dimension_details}}"
-            wx:key="winner"
-          >
+          <!-- EI 维度 -->
+          <view class="dimension-item">
             <view class="dimension-type">
-              <text class="dimension-name">{{item.winner}}</text>
-              <text class="dimension-full">{{dimensionNames[item.winner]}}</text>
+              <text class="dimension-name">{{mbtiResult.dimension_details.EI.winner}}</text>
+              <text class="dimension-full">{{dimensionNames[mbtiResult.dimension_details.EI.winner]}}</text>
             </view>
             <view class="dimension-scores">
               <view class="score-pair">
-                <text class="score-label E">E: {{item.E}}</text>
-                <text class="score-label I">I: {{item.I}}</text>
-              </view>
-              <view class="score-pair" wx:if="{{item.winner === 'E' || item.winner === 'I'}}">
-                <text class="score-label S">S: {{item.S}}</text>
-                <text class="score-label N">N: {{item.N}}</text>
-              </view>
-              <view class="score-pair" wx:if="{{item.winner === 'S' || item.winner === 'N'}}">
-                <text class="score-label T">T: {{item.T}}</text>
-                <text class="score-label F">F: {{item.F}}</text>
-              </view>
-              <view class="score-pair" wx:if="{{item.winner === 'T' || item.winner === 'F'}}">
-                <text class="score-label J">J: {{item.J}}</text>
-                <text class="score-label P">P: {{item.P}}</text>
+                <text class="score-label E">E: {{mbtiResult.dimension_details.EI.E}}</text>
+                <text class="score-label I">I: {{mbtiResult.dimension_details.EI.I}}</text>
               </view>
             </view>
             <view class="dimension-strength" wx:if="{{mbtiResult.strengths}}">
               <view class="strength-bar">
-                <view class="strength-fill" style="width: {{mbtiResult.strengths[getStrengthKey(item.winner)]}}%"></view>
+                <view class="strength-fill" style="width: {{mbtiResult.strengths.EI_strength}}%"></view>
               </view>
-              <view class="strength-text">{{mbtiResult.strengths[getStrengthKey(item.winner)]}}%</view>
-              <view class="strength-desc">{{getStrengthDescription(mbtiResult.strengths[getStrengthKey(item.winner)])}}</view>
+              <view class="strength-text">{{mbtiResult.strengths.EI_strength}}%</view>
+              <view class="strength-desc">{{getStrengthDescription(mbtiResult.strengths.EI_strength)}}</view>
+            </view>
+          </view>
+          
+          <!-- SN 维度 -->
+          <view class="dimension-item">
+            <view class="dimension-type">
+              <text class="dimension-name">{{mbtiResult.dimension_details.SN.winner}}</text>
+              <text class="dimension-full">{{dimensionNames[mbtiResult.dimension_details.SN.winner]}}</text>
+            </view>
+            <view class="dimension-scores">
+              <view class="score-pair">
+                <text class="score-label S">S: {{mbtiResult.dimension_details.SN.S}}</text>
+                <text class="score-label N">N: {{mbtiResult.dimension_details.SN.N}}</text>
+              </view>
+            </view>
+            <view class="dimension-strength" wx:if="{{mbtiResult.strengths}}">
+              <view class="strength-bar">
+                <view class="strength-fill" style="width: {{mbtiResult.strengths.SN_strength}}%"></view>
+              </view>
+              <view class="strength-text">{{mbtiResult.strengths.SN_strength}}%</view>
+              <view class="strength-desc">{{getStrengthDescription(mbtiResult.strengths.SN_strength)}}</view>
+            </view>
+          </view>
+          
+          <!-- TF 维度 -->
+          <view class="dimension-item">
+            <view class="dimension-type">
+              <text class="dimension-name">{{mbtiResult.dimension_details.TF.winner}}</text>
+              <text class="dimension-full">{{dimensionNames[mbtiResult.dimension_details.TF.winner]}}</text>
+            </view>
+            <view class="dimension-scores">
+              <view class="score-pair">
+                <text class="score-label T">T: {{mbtiResult.dimension_details.TF.T}}</text>
+                <text class="score-label F">F: {{mbtiResult.dimension_details.TF.F}}</text>
+              </view>
+            </view>
+            <view class="dimension-strength" wx:if="{{mbtiResult.strengths}}">
+              <view class="strength-bar">
+                <view class="strength-fill" style="width: {{mbtiResult.strengths.TF_strength}}%"></view>
+              </view>
+              <view class="strength-text">{{mbtiResult.strengths.TF_strength}}%</view>
+              <view class="strength-desc">{{getStrengthDescription(mbtiResult.strengths.TF_strength)}}</view>
+            </view>
+          </view>
+          
+          <!-- JP 维度 -->
+          <view class="dimension-item">
+            <view class="dimension-type">
+              <text class="dimension-name">{{mbtiResult.dimension_details.JP.winner}}</text>
+              <text class="dimension-full">{{dimensionNames[mbtiResult.dimension_details.JP.winner]}}</text>
+            </view>
+            <view class="dimension-scores">
+              <view class="score-pair">
+                <text class="score-label J">J: {{mbtiResult.dimension_details.JP.J}}</text>
+                <text class="score-label P">P: {{mbtiResult.dimension_details.JP.P}}</text>
+              </view>
+            </view>
+            <view class="dimension-strength" wx:if="{{mbtiResult.strengths}}">
+              <view class="strength-bar">
+                <view class="strength-fill" style="width: {{mbtiResult.strengths.JP_strength}}%"></view>
+              </view>
+              <view class="strength-text">{{mbtiResult.strengths.JP_strength}}%</view>
+              <view class="strength-desc">{{getStrengthDescription(mbtiResult.strengths.JP_strength)}}</view>
             </view>
           </view>
         </view>
@@ -199,6 +247,10 @@
         <button class="action-btn secondary {{isFavorite ? 'active' : ''}}" bindtap="toggleFavorite">
           <view class="btn-icon">{{isFavorite ? '❤️' : '🤍'}}</view>
           <view class="btn-text">{{isFavorite ? '已收藏' : '收藏'}}</view>
+        </button>
+        <button class="action-btn secondary" open-type="share">
+          <view class="btn-icon">📤</view>
+          <view class="btn-text">分享结果</view>
         </button>
       </view>
     </view>

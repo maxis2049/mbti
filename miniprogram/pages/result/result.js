@@ -29,12 +29,34 @@ Page({
   },
 
   onLoad: function (options) {
-    const { id } = options;
+    const { id, data, testType, timeSpent } = options;
+    
+    // 优先处理通过data参数传递的完整结果数据
+    if (data) {
+      try {
+        const resultData = JSON.parse(decodeURIComponent(data));
+        // 添加测试相关信息
+        resultData.test_version = testType || 'simple';
+        resultData.test_duration = parseInt(timeSpent) || 0;
+        resultData.created_at = new Date().toISOString();
+        
+        this.setData({
+          mbtiResult: resultData,
+          loading: false
+        });
+        this.loadMBTIReport(resultData.mbti_type);
+        return;
+      } catch (err) {
+        console.error('解析结果数据失败:', err);
+      }
+    }
+    
+    // 如果有ID，从数据库加载
     if (id) {
       this.setData({ resultId: id });
       this.loadSavedResult(id);
     } else {
-      // 如果没有ID，可能是直接进入结果页面
+      // 如果没有ID和data，显示示例结果
       this.loadSampleResult();
     }
   },
@@ -62,37 +84,70 @@ Page({
       return;
     }
     
-    // 如果缓存中没有，从数据库获取
+    // 如果缓存中没有，直接通过ID获取单个结果
     wx.cloud.callFunction({
       name: 'mbti-service',
       data: {
-        action: 'get_user_results',
-        user_id: app.globalData.userInfo ? app.globalData.userInfo.openid : '',
-        limit: 1
+        action: 'get_test_result',
+        resultId: resultId
       }
     }).then(res => {
       wx.hideLoading();
       
       if (res.result && res.result.success) {
-        const results = res.result.data;
-        const result = results.find(r => r._id === resultId);
+        const result = res.result.data;
         
         if (result) {
+          console.log('获取到测试结果:', result);
           this.setData({
             mbtiResult: result,
             loading: false
           });
           this.loadMBTIReport(result.mbti_type);
+          
+          // 更新全局缓存
+          if (!app.globalData.testResults) {
+            app.globalData.testResults = [];
+          }
+          // 避免重复添加
+          if (!app.globalData.testResults.find(r => r._id === result._id)) {
+            app.globalData.testResults.push(result);
+          }
         } else {
-          this.loadSampleResult();
+          // 如果找不到指定ID的结果，显示错误信息
+          wx.showModal({
+            title: '结果不存在',
+            content: '无法找到指定的测试结果，可能已被删除',
+            showCancel: false,
+            success: () => {
+              wx.navigateBack();
+            }
+          });
         }
       } else {
-        this.loadSampleResult();
+        // 处理错误情况
+        const errorMsg = res.result && res.result.error ? res.result.error : '无法加载测试结果，请检查网络连接';
+        console.error('加载测试结果失败:', errorMsg);
+        wx.showModal({
+          title: '加载失败',
+          content: errorMsg,
+          showCancel: false,
+          success: () => {
+            wx.navigateBack();
+          }
+        });
       }
     }).catch(err => {
       wx.hideLoading();
       console.error('加载测试结果失败:', err);
-      this.loadSampleResult();
+      wx.showModal({
+        title: '加载失败',
+        content: '网络异常，请重试',
+        showCancel: false,
+        success: () => {
+          wx.navigateBack();
+        }
+      });
     });
   },
 
@@ -166,34 +221,85 @@ Page({
     return '这个维度的特征在你身上几乎看不到';
   },
 
+  // 获取维度强度键名
+  getStrengthKey: function (dimension) {
+    const keyMap = {
+      'E': 'EI_strength',
+      'I': 'EI_strength',
+      'S': 'SN_strength',
+      'N': 'SN_strength',
+      'T': 'TF_strength',
+      'F': 'TF_strength',
+      'J': 'JP_strength',
+      'P': 'JP_strength'
+    };
+    return keyMap[dimension] || 'EI_strength';
+  },
+
   // 重新测试
   retakeTest: function () {
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/index/index'
     });
   },
 
   // 分享结果
-  shareResult: function () {
-    if (!this.data.mbtiResult) return;
+  // 分享给朋友
+  onShareAppMessage: function (res) {
+    // 分享事件来源：button（页面内分享按钮）、menu（右上角分享按钮）
+    if (res.from === 'button') {
+      console.log('通过分享按钮分享结果');
+    }
+    
+    if (!this.data.mbtiResult) {
+      return {
+      title: 'MBTI性格测试 - 发现真实的自己',
+      path: '/pages/index/index',
+      imageUrl: '/images/share-banner.svg'
+    };
+    }
     
     const report = this.data.mbtiReport;
     const result = this.data.mbtiResult;
     
-    const shareTitle = `我的MBTI性格类型是${result.mbti_type} - ${report.metadata.nickname}`;
-    const sharePath = `/pages/result/result?id=${result._id}`;
+    let shareTitle = `我的MBTI性格类型是${result.mbti_type}`;
+    if (report && report.metadata) {
+      shareTitle += ` - ${report.metadata.nickname}`;
+    }
+    
+    const sharePath = result._id ? `/pages/result/result?id=${result._id}` : '/pages/index/index';
+    
+    // 标记为已分享
+    this.setData({ isShared: true });
     
     return {
       title: shareTitle,
       path: sharePath,
-      imageUrl: '/images/share-banner.png',
-      success: () => {
-        this.setData({ isShared: true });
-        wx.showToast({
-          title: '分享成功',
-          icon: 'success'
-        });
-      }
+      imageUrl: '/images/share-banner.svg'
+    };
+  },
+
+  // 分享到朋友圈
+  onShareTimeline: function () {
+    if (!this.data.mbtiResult) {
+      return {
+      title: 'MBTI性格测试 - 发现真实的自己',
+      imageUrl: '/images/share-banner.svg'
+    };
+    }
+    
+    const report = this.data.mbtiReport;
+    const result = this.data.mbtiResult;
+    
+    let shareTitle = `我的MBTI性格类型：${result.mbti_type}`;
+    if (report && report.metadata) {
+      shareTitle += ` (${report.metadata.nickname})`;
+    }
+    shareTitle += ' | MBTI性格测试';
+    
+    return {
+      title: shareTitle,
+      imageUrl: '/images/share-banner.svg'
     };
   },
 

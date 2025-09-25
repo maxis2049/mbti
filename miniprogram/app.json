@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/test/test",
     "pages/result/result",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/admin/admin"
   ],
   "window": {
     "backgroundColor": "#F8F5FF",
@@ -20,15 +21,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "测试",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "text": "首页",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home-active.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "我的",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "images/icons/usercenter.png",
+        "selectedIconPath": "images/icons/usercenter-active.png"
       }
     ]
   },

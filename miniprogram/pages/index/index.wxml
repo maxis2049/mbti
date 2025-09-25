@@ -2,12 +2,12 @@
 <view class="container">
   <!-- 欢迎区域 -->
   <view class="welcome-section">
-    <view class="welcome-text">{{welcomeText}}</view>
+    <view class="welcome-text" bindtap="onWelcomeTextTap">{{welcomeText}}</view>
     <view class="welcome-subtitle">{{subtitle}}</view>
     
     <!-- 用户信息 -->
-    <view class="user-info" wx:if="{{userInfo}}">
-      <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <view class="user-info" wx:if="{{userInfo && userInfo.nickName}}">
+      <image class="user-avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.svg'}}" mode="aspectFill"></image>
       <view class="user-name">{{userInfo.nickName}}</view>
     </view>
   </view>
@@ -40,7 +40,6 @@
   <view class="recent-tests-section" wx:if="{{recentTests.length > 0}}">
     <view class="section-header">
       <view class="section-title">最近测试</view>
-      <view class="view-all" bindtap="viewHistory">查看全部 ></view>
     </view>
     
     <view class="recent-tests-list">
@@ -79,9 +78,17 @@
       <text>💡 建议：定期测试，观察自己的成长变化</text>
     </view>
     
+    <!-- 分享按钮 -->
+    <view class="share-section">
+      <button class="share-btn" open-type="share">
+        <view class="share-icon">📤</view>
+        <view class="share-text">分享给朋友</view>
+      </button>
+    </view>
+    
     <!-- 激活管理员模式（临时） -->
     <view class="admin-activate" bindtap="toggleAdminMode">
-      <text class="admin-hint">长按此处5次激活管理员模式</text>
+      <!-- <text class="admin-hint">长按此处5次激活管理员模式</text> -->
     </view>
   </view>
 </view>

@@ -3,22 +3,24 @@
   <!-- 用户信息区域 -->
   <view class="user-section">
     <view class="user-card">
-      <view class="user-avatar-container" bindtap="getUserProfile">
+      <button class="user-avatar-container" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
         <image 
           class="user-avatar" 
-          src="{{userInfo ? userInfo.avatarUrl : '/images/default-avatar.png'}}" 
+          src="{{userInfo && userInfo.avatarUrl ? userInfo.avatarUrl : '/images/default-avatar.svg'}}" 
           mode="aspectFill"
         ></image>
-        <view class="avatar-edit-icon" wx:if="{{!userInfo}}">+</view>
-      </view>
+        <view class="avatar-edit-icon">📷</view>
+      </button>
       
       <view class="user-info">
-        <view class="user-name">{{userInfo ? userInfo.nickName : '点击登录'}}</view>
-        <view class="user-desc">{{userInfo ? '已登录用户' : '登录后可保存测试记录'}}</view>
-      </view>
-      
-      <view class="user-actions" bindtap="getUserProfile" wx:if="{{!userInfo}}">
-        <button class="btn-primary">立即登录</button>
+        <input 
+          class="user-name-input" 
+          type="nickname" 
+          placeholder="{{userInfo && userInfo.nickName ? userInfo.nickName : '点击输入昵称'}}" 
+          value="{{userInfo ? userInfo.nickName : ''}}"
+          bind:blur="onNicknameChange"
+        />
+        <view class="user-desc">{{userInfo && userInfo.nickName ? '已完善个人信息' : '请完善头像和昵称'}}</view>
       </view>
     </view>
   </view>
@@ -71,7 +73,7 @@
       >
         <view class="history-type">{{item.mbti_type}}</view>
         <view class="history-info">
-          <view class="history-title">{{item.mbti_type}} - {{item.test_version === 'simple' ? '快速测试' : '深度测试'}}</view>
+          <view class="history-title">{{item.mbti_type}} - {{item.test_type === 'simple' ? '快速测试' : '深度测试'}}</view>
           <view class="history-time">{{item.created_at}}</view>
         </view>
         <view class="history-arrow">></view>
